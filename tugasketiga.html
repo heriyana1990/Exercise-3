@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tugas Hari Ketiga</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2> Tugas Hari Ketiga </h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names" title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:10%;">Height</th>
+    <th style="width:10%;">Mass</th>
+    <th style="width:10%;">Gender</th>
+    <th style="width:10%;">Birth Year</th>
+  </tr>
+<tr>
+    <td>Luke Skywalker</td>
+    <td>172</td>
+    <td>77</td>
+    <td>Male</td>
+    <td>19BBY</td>
+  </tr>
+  <tr>
+    <td>C- 3P0</td>
+    <td>167</td>
+    <td>75</td>
+    <td>n/a</td>
+    <td>112BBY</td>
+  </tr>
+  <tr>
+    <td>R2-D2</td>
+    <td>96</td>
+    <td>32</td>
+    <td>n/a</td>
+    <td>33BBY</td>
+  </tr>
+  <tr>
+    <td>Darth Vader</td>
+    <td>202</td>
+    <td>136</td>
+    <td>Male</td>
+    <td>41.9BBY</td>
+  </tr>
+  <tr>
+    <td>Leia Organa</td>
+    <td>150</td>
+    <td>49</td>
+    <td>Female</td>
+    <td>19BBY</td>
+  </tr>
+  <tr>
+    <td>Owen Lars</td>
+    <td>178</td>
+    <td>120</td>
+    <td>Male</td>
+    <td>52BBY</td>
+  </tr>
+</table>
+
+
+<style> 
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid ##273c75;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid ##273c75;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: center;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid ##273c75;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: ##273c75;
+}
+</style>
+
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+
+</body>
+</html>
